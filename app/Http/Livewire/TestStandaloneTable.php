@@ -3,8 +3,10 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
+use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
@@ -29,7 +31,11 @@ class TestStandaloneTable extends Component implements HasTable, HasForms
             TextColumn::make('name'),
             TextColumn::make('email'),
         ])->actions([
-            EditAction::make('edit')
+            EditAction::make('edit')->form([
+                TextInput::make('name')->required(),
+                TextInput::make('email'),
+            ]),
+            DeleteAction::make('delete')
         ]);
     }
 }
