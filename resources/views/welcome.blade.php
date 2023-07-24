@@ -14,7 +14,10 @@
 </head>
 <body class="antialiased p-20">
 
-@livewire('test-standalone-table')
+<h1>Create Option Modal Issue</h1>
+@livewire('create-option-modal-issue')
+
+
 @filamentScripts
 </body>
 </html>
