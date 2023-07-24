@@ -15,13 +15,13 @@ use Filament\Tables\Table;
 use Livewire\Component;
 use Filament\Forms\Components\Wizard;
 
-class CreateOptionModalIssue extends Component implements HasTable, HasForms
+class LiveComponentsDontWorkOnWizard extends Component implements HasTable, HasForms
 {
     use InteractsWithForms, InteractsWithTable;
 
     public function render()
     {
-        return view('livewire.create-option-modal-issue');
+        return view('livewire.live-components-dont-work-on-wizard');
     }
 
     public function table(Table $table): Table
@@ -40,25 +40,17 @@ class CreateOptionModalIssue extends Component implements HasTable, HasForms
                 ->steps([
                     Wizard\Step::make('Location')
                         ->schema([
-                            TextInput::make('name'),
-                            TextInput::make('email'),
-                            Select::make('company_location_id')
-                                ->relationship('location', 'id')
-                                ->label('Location')->required()
-                                ->createOptionForm([
-                                    Select::make('country_id')
-                                        ->label('Country')
-                                        ->required(),
+                            Select::make('dummy')
+                                ->options([
+                                    'a' => 'Foo',
+                                    'b' => 'Bar'
+                                ])->live(),
 
-                                    Select::make('state_id')
-                                        ->label('State')
-                                        ->required(),
-                                ])
-                                ->columnSpan(2)
-                                ->helperText('Select the location where the job is based'),
+                            TextInput::make('name')
+                                ->visible(fn($get) => $get('dummy') === 'a')
+                                ->required(),
                         ])
                 ])
         ]);
     }
-
 }

@@ -14,8 +14,18 @@
 </head>
 <body class="antialiased p-20">
 
-<h1>Create Option Modal Issue</h1>
-@livewire('create-option-modal-issue')
+<div>
+    <h1 class="text-2xl">Create Option Modal Issue</h1>
+    @livewire('create-option-modal-issue')
+</div>
+
+<div class="mt-10">
+    <h1 class="text-2xl">Live Components don't Work on an Action when using
+        <code>steps()</code>
+        method
+    </h1>
+    @livewire('live-components-dont-work-on-wizard')
+</div>
 
 
 @filamentScripts
