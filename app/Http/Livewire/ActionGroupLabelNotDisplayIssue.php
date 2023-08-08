@@ -38,7 +38,16 @@ class ActionGroupLabelNotDisplayIssue extends Component implements HasTable, Has
             ActionGroup::make([
                 Action::make('a')->label('Action A'),
                 Action::make('b')->label('Action B'),
-            ])->label('Header Actions Label')
+            ])->label('Header Actions Label')->extraAttributes([
+                'class'=>'text-white border-2 border-white'
+            ]),
+
+            ActionGroup::make([
+                Action::make('a')->label('Action A'),
+                Action::make('b')->label('Action B'),
+            ])->label('Header Actions Label')->extraAttributes([
+                'class'=>'text-white border-2 border-white'
+            ])
         ]);
     }
 }
