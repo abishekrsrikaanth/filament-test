@@ -27,6 +27,19 @@
     @livewire('live-components-dont-work-on-wizard')
 </div>
 
+<div class="mt-10">
+    <h1 class="text-2xl">Get Option Label From Record Using Issue
+    </h1>
+    @livewire('get-option-label-from-record-using-issue')
+</div>
+
+
+<div class="mt-10">
+    <h1 class="text-2xl">Action Group Doesn't show Label
+    </h1>
+    @livewire('action-group-label-not-display-issue')
+</div>
+
 
 @filamentScripts
 </body>
