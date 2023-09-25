@@ -14,7 +14,14 @@
 </head>
 <body class="antialiased p-20">
 
-<div>
+<div class="mt-10">
+    <h1 class="text-2xl">Multiple hint action margin issue</h1>
+    @livewire('hint-action-margin-issue')
+</div>
+
+
+
+<div class="mt-10">
     <h1 class="text-2xl">Create Option Modal Issue</h1>
     @livewire('create-option-modal-issue')
 </div>
