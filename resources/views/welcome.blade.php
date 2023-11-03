@@ -11,6 +11,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
     @vite(['resources/css/app.css','resources/js/app.js'])
     @filamentStyles
+    @filamentScripts
 </head>
 <body class="antialiased p-20">
 
@@ -48,6 +49,10 @@
 </div>
 
 
-@filamentScripts
+<div class="mt-10">
+    <h1 class="text-2xl">Standalone Action
+    </h1>
+    @livewire('standalone-action')
+</div>
 </body>
 </html>
